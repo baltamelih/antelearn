@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link href="{%static 'css/login.css' %}" rel="stylesheet">
+</head>
+<head>
+
+<div class="mask d-flex align-items-center h-100 gradient-custom-3">
+
+  <div class="container ">
+
+    <div class="row d-flex justify-content-center align-items-center h-100">
+
+      <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+
+        <div class="card" style="border-radius: 15px;">
+
+          <div class="card-body p-5">
+
+            <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+
+            <form [formGroup]="registerForm">
+
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="usernameInput" placeholder=" " formControlName="username">
+                <label for="usernameInput">Username</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="emailInput" placeholder="name@example.com"
+                  formControlName="email">
+                <label for="emailInput">Email address</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="telephoneInput" placeholder="554 554 5454"
+                  [defaultValue]="'+90 '" formControlName="telephoneNumber">
+                <label for="telephoneInput">Telephone Number</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="passwordInput" placeholder=" "
+                  formControlName="password">
+                <label for="passwordInput">Password</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="rPasswordInput" placeholder=" "
+                  formControlName="passwordControl">
+                <label for="rPasswordInput">Repeat Password</label>
+              </div>
+
+
+
+              <div class="form-outline input-group mb-3">
+                <label class="input-group-text" for="role">Role</label>
+                <select class="form-select" id="role" formControlName="role">
+                  <option selected>Choose...</option>
+                  <option value="admin">Admin</option>
+                  <option value="user">User</option>
+                </select>
+              </div>
+
+
+              <div class="form-check d-flex justify-content-center mb-5">
+                <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
+                <label class="form-check-label" >
+                  I agree all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
+                </label>
+              </div>
+
+              <div class="d-flex justify-content-center">
+                <button type="button"
+                  class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" (click)="registerUser()">Register</button>
+              </div>
+
+              <p class="text-center text-muted mt-5 mb-0">Have already an acc
+                ount? <a href="login" class="fw-bold text-body"><u>Login here</u></a></p>
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</head>
+<body>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+</body>
+</html>
